@@ -16,27 +16,26 @@ function App() {
   }
 
   function checkLucky() {
-    console.log("birthdayDate" + birthdayDate);
-    dateString = birthdayDate.toString().split("-");
-    console.log("dateString" + dateString);
-    // dateString=dateString.toString().split(',').join('');
-    dateString = dateString.toString().replace(/\,/g, "");
-    console.log("dateString" + dateString);
+    if (birthdayDate && luckyNumber) {
+      dateString = birthdayDate.toString().split("-");
+      // dateString=dateString.toString().split(',').join('');
+      dateString = dateString.toString().replace(/\,/g, "");
+      var dateInt = Number(dateString);
 
-    var dateInt = Number(dateString);
-    console.log("dateInt" + dateInt);
+      var number = dateString,
+        sum = 0;
+      while (number !== 0) {
+        sum += number % 10;
+        number = parseInt(number / 10);
+      }
 
-    var number = dateString,
-      sum = 0;
-    while (number !== 0) {
-      sum += number % 10;
-      number = parseInt(number / 10);
-    }
-
-    if (sum % luckyNumber == 0) {
-      setMessage("You are lucky!Congratulations!");
+      if (sum % luckyNumber == 0) {
+        setMessage("You are lucky!Congratulations!");
+      } else {
+        setMessage("Sorry...Your birthdate is not lucky!");
+      }
     } else {
-      setMessage("Sorry...Your birthdate is not lucky!");
+      setMessage("Please enter birth date and lucky number");
     }
   }
 
@@ -61,7 +60,7 @@ function App() {
           </div>
 
           <button onClick={checkLucky}>Click to check</button>
-          <h3>{message}</h3>
+          <div className="mesaage-txt">{message}</div>
         </div>
       </section>
       <footer class="footer">
