@@ -18,9 +18,9 @@ function App() {
   function checkLucky() {
     if (birthdayDate && luckyNumber) {
       dateString = birthdayDate.toString().split("-");
-      // dateString=dateString.toString().split(',').join('');
-      dateString = dateString.toString().replace(/\,/g, "");
-      var dateInt = Number(dateString);
+      dateString = dateString.toString().split(",").join("");
+      // dateString = dateString.toString().replace(/\,/g, "");
+      // var dateInt = Number(dateString);
 
       var number = dateString,
         sum = 0;
@@ -29,7 +29,7 @@ function App() {
         number = parseInt(number / 10);
       }
 
-      if (sum % luckyNumber == 0) {
+      if (sum % luckyNumber === 0) {
         setMessage("You are lucky!Congratulations!");
       } else {
         setMessage("Sorry...Your birthdate is not lucky!");
@@ -63,32 +63,32 @@ function App() {
           <div className="mesaage-txt">{message}</div>
         </div>
       </section>
-      <footer class="footer">
-        <div class="footer-header">Connect with me on</div>
-        <ul class="list-non-bullet">
-          <li class="list-item-inline">
-            <a class="link" href="https://github.com/AnjaliDeshwani">
-              <i class="fab fa-github"></i>
+      <footer className="footer">
+        <div className="footer-header">Connect with me on</div>
+        <ul className="list-non-bullet">
+          <li className="list-item-inline">
+            <a className="link" href="https://github.com/AnjaliDeshwani">
+              <i className="fab fa-github"></i>
             </a>
           </li>
 
-          <li class="list-item-inline">
-            <a class="link" href="https://twitter.com/anjali_deshwani">
-              <i class="fab fa-twitter"></i>
+          <li className="list-item-inline">
+            <a className="link" href="https://twitter.com/anjali_deshwani">
+              <i className="fab fa-twitter"></i>
             </a>
           </li>
-          <li class="list-item-inline">
+          <li className="list-item-inline">
             <a
-              class="link"
+              className="link"
               href="https://www.linkedin.com/in/anjali-deshwani-08a9b6140"
             >
-              <i class="fab fa-linkedin"></i>
+              <i className="fab fa-linkedin"></i>
             </a>
           </li>
         </ul>
-        <p class="copyright">
-          Copyright © <span class="copyright-date">2021</span> Anjali Deshwani.
-          All Rights Reserved.
+        <p className="copyright">
+          Copyright © <span className="copyright-date">2021</span> Anjali
+          Deshwani. All Rights Reserved.
         </p>
       </footer>
     </div>
